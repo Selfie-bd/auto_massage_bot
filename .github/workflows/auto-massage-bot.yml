@@ -1,38 +1,19 @@
-name: Auto-Massage Bot
-
+name: Auto-Massage-Bot
 on:
-
   push:
-
     branches:
-
       - main
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Set up Python
-
         uses: actions/setup-python@v2
-
         with:
-
           python-version: '3.x'
-
       - name: Checkout code
-
         uses: actions/checkout@v2
-
       - name: Install dependencies
-
         run: pip install -r bot/requirements.txt
-
       - name: Run bot
-
         run: python bot/bot.py
-
